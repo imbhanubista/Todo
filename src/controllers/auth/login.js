@@ -25,6 +25,7 @@ exports.login = async(req,res)=>{
                 msg:"User Signed successfully!!",
                 data:{
                     email: userDetail.email,
+                    isEmailVerified: userDetail.isEmailVerified,
                     token: jwtSign
                 }
             })

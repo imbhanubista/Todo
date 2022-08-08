@@ -1,4 +1,5 @@
 const {Schema, model} = require("mongoose")
+const User = require('./users')
 
 // to create the schema
 const contentSchema = new Schema({
@@ -6,9 +7,13 @@ const contentSchema = new Schema({
         type:String,
         required: true
     },
-   content:{
+   body:{
     type:String,
     required: true
+   },
+   created_by:{
+    type:String,
+    ref: User
    }
 },{
     timestamps:true

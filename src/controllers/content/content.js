@@ -2,6 +2,7 @@ const { saveContent } = require("../../services/content/content");
 
 exports.postContent = async (req, res) => {
   const { title, body } = req.body;
+  
   try {
     let todo = await saveContent({ title, body });
     res.json({
@@ -10,6 +11,7 @@ exports.postContent = async (req, res) => {
       data: todo,
     });
   } catch (err) {
+    console.log(err)
     res.json({
       type: "error",
       msg: "Something went wrong",

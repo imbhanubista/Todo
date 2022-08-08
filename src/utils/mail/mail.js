@@ -6,14 +6,14 @@ const mail = (to, subject, html) => {
   const senderDetails = nodeMailer.createTransport({
     service: "gmail",
     auth: {
-      user: "imbhanubista@gmail.com",
-      pass: "24782bhanu",
+      user: process.env.USER,
+      pass: process.env.PASS,
     },
   });
 
   // now receiver details
   const receiverDetails = {
-    from: "imwhiteshadow10@gmail.com",
+    from: process.env.USER,
     to,
     subject,
     html,
