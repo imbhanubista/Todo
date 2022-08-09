@@ -1,8 +1,7 @@
 const content = require('../../models/content')
 const {getAllContent} = require('../../services/content/content')
 
-exports.getAllContents =async (req,res)=>{
-    
+exports.getAllContents =async (req,res)=>{ 
     try{
         const allContent = await getAllContent()
         res.json({
@@ -12,6 +11,7 @@ exports.getAllContents =async (req,res)=>{
         })
     }
     catch(err){
+        console.log(err)
         res.json({
             type:"error",
             msg:"Something went wrong !!!"

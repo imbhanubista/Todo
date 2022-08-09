@@ -7,7 +7,7 @@ exports.saveContent = async(data)=>{
 
 // function to get all content
 exports.getAllContent = async(condition)=>{
-    return await Content.find(condition)
+    return await Content.find(condition).populate("created_by")
 }
 
 // function to update content
@@ -17,5 +17,10 @@ exports.updateContent = async(condition, data)=>{
 
 // find content by id
 exports.findContent = async(condition)=>{
-    return await Content.findById(condition)
+    return await Content.find(condition)
+}
+
+// function to delete content
+exports.deleteContent = async(condition)=>{
+    return await Content.deleteOne(condition)
 }
