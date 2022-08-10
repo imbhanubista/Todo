@@ -1,7 +1,7 @@
 const {updateContent, findContent} = require('../../services/content/content')
 
 exports.findById = async(req,res)=>{
-    let {id} = req.query
+    let {id} = req.params
    try{
     const contentByUserId = await findContent({created_by:id})
     if(!contentByUserId){
@@ -18,7 +18,6 @@ exports.findById = async(req,res)=>{
     })
    }
    catch(err){
-        //  console.log(err)
     res.json({
         type:'error',
         msg:"Something went wrong"
