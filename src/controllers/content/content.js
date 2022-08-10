@@ -3,7 +3,6 @@ const { saveContent } = require("../../services/content/content");
 exports.postContent = async (req, res) => {
   const { title, body } = req.body;
   let user = req.isLoggedInData
-  console.log(user)
   try {
     let todo = await saveContent({ title, body, created_by: user.user_id });
     res.json({
