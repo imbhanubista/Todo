@@ -3,15 +3,17 @@ exports.updateContent = async(req,res)=>{
     let {id} = req.params
     let{title,body} = req.body
     try{
-        const content = await findContent({_id:id})
-        if(!content){
-            res.json({
-                type:"error",
-                msg:"Content doesn't exist!!!"
-            })
-            return
-        } 
-        await updateContent({title,body})
+        
+        await updateContent({_id:id},{
+            $set:{
+                title,
+                body
+            }
+        })
+        res.json({
+            type:"success",
+            msg:"Content updated successfully"
+        })
     }
     catch(err){
         res.json({

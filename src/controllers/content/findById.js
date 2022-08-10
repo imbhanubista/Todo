@@ -4,7 +4,7 @@ exports.findById = async(req,res)=>{
     let {id} = req.params
    try{
     const contentByUserId = await findContent({created_by:id})
-    if(!contentByUserId){
+    if(!contentByUserId || contentByUserId.length === 0){
         res.json({
             type:"error",
             msg:"User haven't created single content yet !!!"

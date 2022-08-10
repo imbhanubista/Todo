@@ -24,3 +24,8 @@ exports.findContent = async(condition)=>{
 exports.deleteContent = async(condition)=>{
     return await Content.deleteOne(condition)
 }
+
+// find content by id
+exports.findById = async(id)=>{
+    return await Content.findById(id)
+}
