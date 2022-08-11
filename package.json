@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "bistaify",
   "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
