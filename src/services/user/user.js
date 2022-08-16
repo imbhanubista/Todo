@@ -18,3 +18,8 @@ exports.updateUser = async (condition, data)=>{
 exports.saveForgetPassword = async (data)=>{
     return await new Forget(data).save()
 }
+
+// update password 
+exports.updatePassword = async (condition,data)=>{
+    return await User.updateOne(condition,data)
+}
