@@ -23,3 +23,8 @@ exports.saveForgetPassword = async (data)=>{
 exports.updatePassword = async (condition,data)=>{
     return await User.updateOne(condition,data)
 }
+
+// to find the forget password data in the database
+exports.findForgetPassword = async (condition)=>{
+    return await Forget.findOne(condition)
+}
